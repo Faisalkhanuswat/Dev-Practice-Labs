@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2024", // Target latest stable Node.js features
+    "module": "CommonJS", // Use CommonJS for Node.js compatibility
+    "moduleResolution": "Node", // Resolve modules like Node.js
+    "esModuleInterop": true, // Enable compatibility with CommonJS modules
+    "strict": true, // Enable strict type checking
+    "baseUrl": "./", // Base directory for module resolution
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory of TypeScript files
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true, // Ensure file name casing consistency
+    "skipLibCheck": true, // Skip type checks of declaration files
+    "resolveJsonModule": true, // Allow importing JSON files
+    /* Debugging Options */
+    "sourceMap": true, // Generate .map files for debugging
+    /* Node.js Specific */
+    "types": [
+      "node"
+    ], // Include Node.js types
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src/**/*"
+  ], // Include all files in the `src` folder
+  "exclude": [
+    "node_modules",
+    "dist"
+  ] // Exclude unnecessary folders
+}
