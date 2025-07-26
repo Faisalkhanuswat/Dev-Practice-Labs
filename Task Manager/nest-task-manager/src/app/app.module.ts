@@ -4,16 +4,17 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import envFileConfig from '../config/env.config';
-import dbConfig from '../config/db.config';
+import { DbModule } from '../config/db.config';
+import yamlConfig from 'src/config/yaml.config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath: envFileConfig,
-      load: [],
+      load: [yamlConfig],
       isGlobal: true
     }),
-    dbConfig,
+    DbModule,
     TasksModule,
     AuthModule,
     UsersModule

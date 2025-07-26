@@ -41,7 +41,10 @@ class SignInPage extends Component {
       await this.props.userStore.signin(username, password);
       window.location.hash = '/tasks';
     } catch (error) {
-      const errorMessage = error.response.data.message;
+      let errorMessage = error.message
+      if (error.response?.data?.message) {
+        errorMessage = error.response?.data.message;
+      }
       this.setState({ errorMessage });
     }
   };
@@ -58,7 +61,7 @@ class SignInPage extends Component {
         <FormContainer>
           <Heading>Hello!</Heading>
           <p>Fill in your username and password to sign in.</p>
-          
+
           {errorMessage && <ErrorMessage message={this.state.errorMessage} />}
 
           <div>
@@ -80,7 +83,7 @@ class SignInPage extends Component {
               onChange={e => this.setState({ password: e.target.value })}
             />
           </div>
-          <hr/>
+          <hr />
           <div>
             <Button
               style={{ marginBottom: '10px' }}
