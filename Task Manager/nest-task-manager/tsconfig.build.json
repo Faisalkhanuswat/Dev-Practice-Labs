@@ -6,8 +6,8 @@
     "dist",
     "**/*spec.ts"
   ],
-  "compilerOptions": {
-    "sourceMap": false,
-    "declaration": false
-  },
+  // "compilerOptions": {
+  //   "sourceMap": false,
+  //   "declaration": false
+  // },
 }

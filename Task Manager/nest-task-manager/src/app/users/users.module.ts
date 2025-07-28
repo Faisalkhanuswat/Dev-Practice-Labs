@@ -8,7 +8,10 @@ import { UserSubscriber } from 'src/models/user/user.subscriber';
   imports: [
     TypeOrmModule.forFeature([UserSchema])
   ],
-  providers: [UsersService, UserSubscriber],
-  exports: [UsersService]
+  providers: [
+    UsersService,
+    UserSubscriber
+  ],
+  exports: [UsersService, TypeOrmModule]
 })
 export class UsersModule { }

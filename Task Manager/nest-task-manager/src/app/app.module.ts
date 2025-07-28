@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { TasksModule } from './tasks/tasks.module';
 import { ConfigModule } from '@nestjs/config';
+import { DbModule } from '../config/db/db.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { TasksModule } from './tasks/tasks.module';
 import envFileConfig from '../config/env.config';
-import { DbModule } from '../config/db.config';
 import yamlConfig from 'src/config/yaml.config';
 
 @Module({
@@ -15,9 +15,9 @@ import yamlConfig from 'src/config/yaml.config';
       isGlobal: true
     }),
     DbModule,
-    TasksModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    TasksModule,
   ],
 })
 export class AppModule { }
